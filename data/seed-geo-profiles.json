@@ -1,0 +1,110 @@
+[
+  {
+    "geo_id": "geo_ward_17",
+    "location_name": "Ward 17",
+    "population": 32000,
+    "vulnerability_index": 78,
+    "remoteness_index": 12,
+    "urban_rural": "urban",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_ward_9",
+    "location_name": "Ward 9",
+    "population": 28000,
+    "vulnerability_index": 55,
+    "remoteness_index": 8,
+    "urban_rural": "urban",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_central_zone",
+    "location_name": "Central Zone",
+    "population": 110000,
+    "vulnerability_index": 32,
+    "remoteness_index": 5,
+    "urban_rural": "urban",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_north_zone",
+    "location_name": "North Zone",
+    "population": 95000,
+    "vulnerability_index": 48,
+    "remoteness_index": 15,
+    "urban_rural": "urban",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_south_zone",
+    "location_name": "South Zone",
+    "population": 85000,
+    "vulnerability_index": 42,
+    "remoteness_index": 12,
+    "urban_rural": "urban",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_east_zone",
+    "location_name": "East Zone",
+    "population": 80000,
+    "vulnerability_index": 51,
+    "remoteness_index": 18,
+    "urban_rural": "urban",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_commercial_district",
+    "location_name": "Commercial District",
+    "population": 18000,
+    "vulnerability_index": 28,
+    "remoteness_index": 4,
+    "urban_rural": "urban",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_rural_block_a",
+    "location_name": "Rural Block A",
+    "population": 92000,
+    "vulnerability_index": 88,
+    "remoteness_index": 62,
+    "urban_rural": "rural",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_rural_block_c",
+    "location_name": "Rural Block C",
+    "population": 88000,
+    "vulnerability_index": 91,
+    "remoteness_index": 70,
+    "urban_rural": "rural",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_village_cluster_b",
+    "location_name": "Village Cluster B",
+    "population": 16000,
+    "vulnerability_index": 86,
+    "remoteness_index": 78,
+    "urban_rural": "rural",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_village_cluster_d",
+    "location_name": "Village Cluster D",
+    "population": 12000,
+    "vulnerability_index": 90,
+    "remoteness_index": 82,
+    "urban_rural": "rural",
+    "synthetic": true
+  },
+  {
+    "geo_id": "geo_district_periphery",
+    "location_name": "District Periphery",
+    "population": 45000,
+    "vulnerability_index": 74,
+    "remoteness_index": 45,
+    "urban_rural": "peri_urban",
+    "synthetic": true
+  }
+]

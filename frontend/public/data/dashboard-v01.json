@@ -1,0 +1,3006 @@
+{
+  "schema_version": "v0.1",
+  "synthetic": true,
+  "catalog": "evidence_derived",
+  "generated_by": "src/pipeline/export_dashboard.py",
+  "meta": {
+    "synthetic": true,
+    "default_budget_cr": 60.0,
+    "available_budgets_cr": [
+      50.0,
+      60.0,
+      100.0
+    ],
+    "underserved_rule": "equity_derived >= 75th percentile of the 12-project derived catalog",
+    "underserved_percentile": 0.75,
+    "underserved_equity_min": 81.05,
+    "underserved_ids": [
+      "P004",
+      "P008",
+      "P009"
+    ],
+    "seed_projects_modified": false
+  },
+  "overview": {
+    "total_citizen_requests": 36,
+    "unique_requests": 34,
+    "duplicate_requests": 2,
+    "demand_clusters": 13,
+    "candidate_projects": 12,
+    "policy_budget_cr": 60.0,
+    "request_category_mix": {
+      "healthcare": 10,
+      "roads": 12,
+      "water": 14
+    },
+    "cluster_category_mix": {
+      "healthcare": 4,
+      "roads": 5,
+      "water": 4
+    },
+    "project_category_mix": {
+      "healthcare": 4,
+      "roads": 4,
+      "water": 4
+    },
+    "project_category_cost_cr": {
+      "healthcare": 40.0,
+      "roads": 80.0,
+      "water": 74.0
+    }
+  },
+  "clusters": [
+    {
+      "cluster_id": "cls_geo_village_cluster_d_healthcare_community_health_subcentre",
+      "geography": "Village Cluster D",
+      "geo_id": "geo_village_cluster_d",
+      "urban_rural": "rural",
+      "category": "healthcare",
+      "requested_intervention": "community_health_subcentre",
+      "unique_request_count": 3,
+      "total_request_count": 3,
+      "requests_per_1000_residents": 0.25,
+      "infrastructure_deficit_score": 94.0,
+      "vulnerability_index": 90.0,
+      "remoteness_index": 82.0,
+      "equity_index": 87.6,
+      "max_urgency": "high",
+      "approved_or_active_investment_cr": 0,
+      "investment_gap_score": 100,
+      "linked_project_id": "P009"
+    },
+    {
+      "cluster_id": "cls_geo_village_cluster_b_roads_village_road_connectivity",
+      "geography": "Village Cluster B",
+      "geo_id": "geo_village_cluster_b",
+      "urban_rural": "rural",
+      "category": "roads",
+      "requested_intervention": "village_road_connectivity",
+      "unique_request_count": 3,
+      "total_request_count": 3,
+      "requests_per_1000_residents": 0.1875,
+      "infrastructure_deficit_score": 91.0,
+      "vulnerability_index": 86.0,
+      "remoteness_index": 78.0,
+      "equity_index": 83.6,
+      "max_urgency": "critical",
+      "approved_or_active_investment_cr": 0,
+      "investment_gap_score": 100,
+      "linked_project_id": "P004"
+    },
+    {
+      "cluster_id": "cls_geo_ward_17_water_water_distribution_upgrade",
+      "geography": "Ward 17",
+      "geo_id": "geo_ward_17",
+      "urban_rural": "urban",
+      "category": "water",
+      "requested_intervention": "water_distribution_upgrade",
+      "unique_request_count": 4,
+      "total_request_count": 5,
+      "requests_per_1000_residents": 0.125,
+      "infrastructure_deficit_score": 93.0,
+      "vulnerability_index": 78.0,
+      "remoteness_index": 12.0,
+      "equity_index": 58.2,
+      "max_urgency": "high",
+      "approved_or_active_investment_cr": 0,
+      "investment_gap_score": 100,
+      "linked_project_id": "P001"
+    },
+    {
+      "cluster_id": "cls_geo_commercial_district_roads_urban_flyover_improvement",
+      "geography": "Commercial District",
+      "geo_id": "geo_commercial_district",
+      "urban_rural": "urban",
+      "category": "roads",
+      "requested_intervention": "urban_flyover_improvement",
+      "unique_request_count": 2,
+      "total_request_count": 2,
+      "requests_per_1000_residents": 0.1111,
+      "infrastructure_deficit_score": 54.0,
+      "vulnerability_index": 28.0,
+      "remoteness_index": 4.0,
+      "equity_index": 20.8,
+      "max_urgency": "medium",
+      "approved_or_active_investment_cr": 30.0,
+      "investment_gap_score": 25,
+      "linked_project_id": "P007"
+    },
+    {
+      "cluster_id": "cls_geo_ward_9_healthcare_phc_renovation",
+      "geography": "Ward 9",
+      "geo_id": "geo_ward_9",
+      "urban_rural": "urban",
+      "category": "healthcare",
+      "requested_intervention": "phc_renovation",
+      "unique_request_count": 2,
+      "total_request_count": 2,
+      "requests_per_1000_residents": 0.0714,
+      "infrastructure_deficit_score": 72.0,
+      "vulnerability_index": 55.0,
+      "remoteness_index": 8.0,
+      "equity_index": 40.9,
+      "max_urgency": "medium",
+      "approved_or_active_investment_cr": 5.0,
+      "investment_gap_score": 75,
+      "linked_project_id": "P006"
+    },
+    {
+      "cluster_id": "cls_geo_district_periphery_healthcare_district_phc_staffing_upgrade",
+      "geography": "District Periphery",
+      "geo_id": "geo_district_periphery",
+      "urban_rural": "peri_urban",
+      "category": "healthcare",
+      "requested_intervention": "district_phc_staffing_upgrade",
+      "unique_request_count": 2,
+      "total_request_count": 2,
+      "requests_per_1000_residents": 0.0444,
+      "infrastructure_deficit_score": 83.0,
+      "vulnerability_index": 74.0,
+      "remoteness_index": 45.0,
+      "equity_index": 65.3,
+      "max_urgency": "high",
+      "approved_or_active_investment_cr": 11.0,
+      "investment_gap_score": 50,
+      "linked_project_id": "P012"
+    },
+    {
+      "cluster_id": "cls_geo_east_zone_water_water_treatment_plant_upgrade",
+      "geography": "East Zone",
+      "geo_id": "geo_east_zone",
+      "urban_rural": "urban",
+      "category": "water",
+      "requested_intervention": "water_treatment_plant_upgrade",
+      "unique_request_count": 3,
+      "total_request_count": 3,
+      "requests_per_1000_residents": 0.0375,
+      "infrastructure_deficit_score": 81.0,
+      "vulnerability_index": 51.0,
+      "remoteness_index": 18.0,
+      "equity_index": 41.1,
+      "max_urgency": "high",
+      "approved_or_active_investment_cr": 15.0,
+      "investment_gap_score": 50,
+      "linked_project_id": "P011"
+    },
+    {
+      "cluster_id": "cls_geo_ward_9_roads_main_road_resurfacing",
+      "geography": "Ward 9",
+      "geo_id": "geo_ward_9",
+      "urban_rural": "urban",
+      "category": "roads",
+      "requested_intervention": "main_road_resurfacing",
+      "unique_request_count": 1,
+      "total_request_count": 1,
+      "requests_per_1000_residents": 0.0357,
+      "infrastructure_deficit_score": 58.0,
+      "vulnerability_index": 55.0,
+      "remoteness_index": 8.0,
+      "equity_index": 40.9,
+      "max_urgency": "medium",
+      "approved_or_active_investment_cr": 0,
+      "investment_gap_score": 100,
+      "linked_project_id": null
+    },
+    {
+      "cluster_id": "cls_geo_south_zone_roads_main_road_resurfacing",
+      "geography": "South Zone",
+      "geo_id": "geo_south_zone",
+      "urban_rural": "urban",
+      "category": "roads",
+      "requested_intervention": "main_road_resurfacing",
+      "unique_request_count": 3,
+      "total_request_count": 3,
+      "requests_per_1000_residents": 0.0353,
+      "infrastructure_deficit_score": 62.0,
+      "vulnerability_index": 42.0,
+      "remoteness_index": 12.0,
+      "equity_index": 33.0,
+      "max_urgency": "medium",
+      "approved_or_active_investment_cr": 0,
+      "investment_gap_score": 100,
+      "linked_project_id": "P010"
+    },
+    {
+      "cluster_id": "cls_geo_rural_block_c_water_rural_drinking_water_pipeline",
+      "geography": "Rural Block C",
+      "geo_id": "geo_rural_block_c",
+      "urban_rural": "rural",
+      "category": "water",
+      "requested_intervention": "rural_drinking_water_pipeline",
+      "unique_request_count": 3,
+      "total_request_count": 3,
+      "requests_per_1000_residents": 0.0341,
+      "infrastructure_deficit_score": 96.0,
+      "vulnerability_index": 91.0,
+      "remoteness_index": 70.0,
+      "equity_index": 84.7,
+      "max_urgency": "critical",
+      "approved_or_active_investment_cr": 0,
+      "investment_gap_score": 100,
+      "linked_project_id": "P008"
+    },
+    {
+      "cluster_id": "cls_geo_rural_block_a_healthcare_rural_phc_expansion",
+      "geography": "Rural Block A",
+      "geo_id": "geo_rural_block_a",
+      "urban_rural": "rural",
+      "category": "healthcare",
+      "requested_intervention": "rural_phc_expansion",
+      "unique_request_count": 3,
+      "total_request_count": 3,
+      "requests_per_1000_residents": 0.0326,
+      "infrastructure_deficit_score": 89.0,
+      "vulnerability_index": 88.0,
+      "remoteness_index": 62.0,
+      "equity_index": 80.2,
+      "max_urgency": "high",
+      "approved_or_active_investment_cr": 0,
+      "investment_gap_score": 100,
+      "linked_project_id": "P003"
+    },
+    {
+      "cluster_id": "cls_geo_north_zone_water_municipal_water_storage_expansion",
+      "geography": "North Zone",
+      "geo_id": "geo_north_zone",
+      "urban_rural": "urban",
+      "category": "water",
+      "requested_intervention": "municipal_water_storage_expansion",
+      "unique_request_count": 3,
+      "total_request_count": 3,
+      "requests_per_1000_residents": 0.0316,
+      "infrastructure_deficit_score": 76.0,
+      "vulnerability_index": 48.0,
+      "remoteness_index": 15.0,
+      "equity_index": 38.1,
+      "max_urgency": "medium",
+      "approved_or_active_investment_cr": 8.0,
+      "investment_gap_score": 75,
+      "linked_project_id": "P005"
+    },
+    {
+      "cluster_id": "cls_geo_central_zone_roads_urban_road_expansion",
+      "geography": "Central Zone",
+      "geo_id": "geo_central_zone",
+      "urban_rural": "urban",
+      "category": "roads",
+      "requested_intervention": "urban_road_expansion",
+      "unique_request_count": 2,
+      "total_request_count": 3,
+      "requests_per_1000_residents": 0.0182,
+      "infrastructure_deficit_score": 57.0,
+      "vulnerability_index": 32.0,
+      "remoteness_index": 5.0,
+      "equity_index": 23.9,
+      "max_urgency": "medium",
+      "approved_or_active_investment_cr": 25.0,
+      "investment_gap_score": 25,
+      "linked_project_id": "P002"
+    }
+  ],
+  "unmatched_clusters": [
+    {
+      "cluster_id": "cls_geo_ward_9_roads_main_road_resurfacing",
+      "request_ids": [
+        "R035"
+      ],
+      "category": "roads",
+      "location": "Ward 9"
+    }
+  ],
+  "projects": [
+    {
+      "id": "P001",
+      "name": "Ward 17 Water Distribution Upgrade",
+      "category": "water",
+      "location": "Ward 17",
+      "cost_cr": 18.0,
+      "equity": 58.2,
+      "need_score": 78.67,
+      "expected_impact": 13657.11,
+      "estimated_beneficiaries": 28000,
+      "source_cluster_id": "cls_geo_ward_17_water_water_distribution_upgrade",
+      "underserved": false,
+      "synthetic": true
+    },
+    {
+      "id": "P002",
+      "name": "Urban Road Expansion",
+      "category": "roads",
+      "location": "Central Zone",
+      "cost_cr": 25.0,
+      "equity": 23.9,
+      "need_score": 38.11,
+      "expected_impact": 6707.36,
+      "estimated_beneficiaries": 55000,
+      "source_cluster_id": "cls_geo_central_zone_roads_urban_road_expansion",
+      "underserved": false,
+      "synthetic": true
+    },
+    {
+      "id": "P003",
+      "name": "Rural PHC Expansion",
+      "category": "healthcare",
+      "location": "Rural Block A",
+      "cost_cr": 12.0,
+      "equity": 80.2,
+      "need_score": 72.38,
+      "expected_impact": 9235.69,
+      "estimated_beneficiaries": 22000,
+      "source_cluster_id": "cls_geo_rural_block_a_healthcare_rural_phc_expansion",
+      "underserved": false,
+      "synthetic": true
+    },
+    {
+      "id": "P004",
+      "name": "Village Road Connectivity",
+      "category": "roads",
+      "location": "Village Cluster B",
+      "cost_cr": 10.0,
+      "equity": 83.6,
+      "need_score": 84.78,
+      "expected_impact": 6104.16,
+      "estimated_beneficiaries": 12000,
+      "source_cluster_id": "cls_geo_village_cluster_b_roads_village_road_connectivity",
+      "underserved": true,
+      "synthetic": true
+    },
+    {
+      "id": "P005",
+      "name": "Municipal Water Storage Expansion",
+      "category": "water",
+      "location": "North Zone",
+      "cost_cr": 22.0,
+      "equity": 38.1,
+      "need_score": 56.74,
+      "expected_impact": 19609.34,
+      "estimated_beneficiaries": 72000,
+      "source_cluster_id": "cls_geo_north_zone_water_municipal_water_storage_expansion",
+      "underserved": false,
+      "synthetic": true
+    },
+    {
+      "id": "P006",
+      "name": "Primary Health Centre Renovation",
+      "category": "healthcare",
+      "location": "Ward 9",
+      "cost_cr": 8.0,
+      "equity": 40.9,
+      "need_score": 53.66,
+      "expected_impact": 3863.52,
+      "estimated_beneficiaries": 18000,
+      "source_cluster_id": "cls_geo_ward_9_healthcare_phc_renovation",
+      "underserved": false,
+      "synthetic": true
+    },
+    {
+      "id": "P007",
+      "name": "Urban Flyover Improvement",
+      "category": "roads",
+      "location": "Commercial District",
+      "cost_cr": 30.0,
+      "equity": 20.8,
+      "need_score": 41.83,
+      "expected_impact": 4919.21,
+      "estimated_beneficiaries": 42000,
+      "source_cluster_id": "cls_geo_commercial_district_roads_urban_flyover_improvement",
+      "underserved": false,
+      "synthetic": true
+    },
+    {
+      "id": "P008",
+      "name": "Rural Drinking Water Pipeline",
+      "category": "water",
+      "location": "Rural Block C",
+      "cost_cr": 14.0,
+      "equity": 84.7,
+      "need_score": 80.39,
+      "expected_impact": 10129.14,
+      "estimated_beneficiaries": 18000,
+      "source_cluster_id": "cls_geo_rural_block_c_water_rural_drinking_water_pipeline",
+      "underserved": true,
+      "synthetic": true
+    },
+    {
+      "id": "P009",
+      "name": "Community Health Sub-Centre",
+      "category": "healthcare",
+      "location": "Village Cluster D",
+      "cost_cr": 9.0,
+      "equity": 87.6,
+      "need_score": 81.83,
+      "expected_impact": 4255.16,
+      "estimated_beneficiaries": 8000,
+      "source_cluster_id": "cls_geo_village_cluster_d_healthcare_community_health_subcentre",
+      "underserved": true,
+      "synthetic": true
+    },
+    {
+      "id": "P010",
+      "name": "Main Road Resurfacing",
+      "category": "roads",
+      "location": "South Zone",
+      "cost_cr": 15.0,
+      "equity": 33.0,
+      "need_score": 52.0,
+      "expected_impact": 5928.0,
+      "estimated_beneficiaries": 38000,
+      "source_cluster_id": "cls_geo_south_zone_roads_main_road_resurfacing",
+      "underserved": false,
+      "synthetic": true
+    },
+    {
+      "id": "P011",
+      "name": "Water Treatment Plant Upgrade",
+      "category": "water",
+      "location": "East Zone",
+      "cost_cr": 20.0,
+      "equity": 41.1,
+      "need_score": 57.92,
+      "expected_impact": 17468.67,
+      "estimated_beneficiaries": 58000,
+      "source_cluster_id": "cls_geo_east_zone_water_water_treatment_plant_upgrade",
+      "underserved": false,
+      "synthetic": true
+    },
+    {
+      "id": "P012",
+      "name": "District PHC Staffing & Capacity Upgrade",
+      "category": "healthcare",
+      "location": "District Periphery",
+      "cost_cr": 11.0,
+      "equity": 65.3,
+      "need_score": 62.45,
+      "expected_impact": 8743.0,
+      "estimated_beneficiaries": 28000,
+      "source_cluster_id": "cls_geo_district_periphery_healthcare_district_phc_staffing_upgrade",
+      "underserved": false,
+      "synthetic": true
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "50_maximum_impact",
+      "budget_cr": 50.0,
+      "equity_mode": "maximum_impact",
+      "min_underserved_impact_share": 0.0,
+      "label": "Maximum impact / no equity constraint",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P011",
+        "P006"
+      ],
+      "total_cost": 50.0,
+      "unused_budget": 0.0,
+      "total_impact": 40941.53,
+      "underserved_expected_impact": 0,
+      "underserved_impact_share": 0.0,
+      "underserved_ids_selected": [],
+      "category_counts": {
+        "water": 2,
+        "healthcare": 1
+      },
+      "category_spend": {
+        "water": 42.0,
+        "healthcare": 8.0
+      },
+      "category_mix": "healthcare: 1 projects, ₹8 Cr; water: 2 projects, ₹42 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [],
+        "removed": [],
+        "impact_delta": 0.0,
+        "impact_sacrificed_pct": 0.0,
+        "underserved_impact_delta": 0,
+        "underserved_impact_share_baseline": 0.0,
+        "underserved_impact_share_selected": 0.0,
+        "budget_used_baseline": 50.0,
+        "budget_used_selected": 50.0,
+        "unused_budget_selected": 0.0,
+        "category_counts_baseline": {
+          "water": 2,
+          "healthcare": 1
+        },
+        "category_counts_selected": {
+          "water": 2,
+          "healthcare": 1
+        }
+      }
+    },
+    {
+      "id": "50_equity_25",
+      "budget_cr": 50.0,
+      "equity_mode": "equity_25",
+      "min_underserved_impact_share": 0.25,
+      "label": "25% underserved impact",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P008",
+        "P003"
+      ],
+      "total_cost": 48.0,
+      "unused_budget": 2.0,
+      "total_impact": 38974.17,
+      "underserved_expected_impact": 10129.14,
+      "underserved_impact_share": 0.2599,
+      "underserved_ids_selected": [
+        "P008"
+      ],
+      "category_counts": {
+        "water": 2,
+        "healthcare": 1
+      },
+      "category_spend": {
+        "water": 36.0,
+        "healthcare": 12.0
+      },
+      "category_mix": "healthcare: 1 projects, ₹12 Cr; water: 2 projects, ₹36 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [
+          "P003",
+          "P008"
+        ],
+        "removed": [
+          "P006",
+          "P011"
+        ],
+        "impact_delta": -1967.36,
+        "impact_sacrificed_pct": 4.81,
+        "underserved_impact_delta": 10129.14,
+        "underserved_impact_share_baseline": 0.0,
+        "underserved_impact_share_selected": 0.2599,
+        "budget_used_baseline": 50.0,
+        "budget_used_selected": 48.0,
+        "unused_budget_selected": 2.0,
+        "category_counts_baseline": {
+          "water": 2,
+          "healthcare": 1
+        },
+        "category_counts_selected": {
+          "water": 2,
+          "healthcare": 1
+        }
+      }
+    },
+    {
+      "id": "50_equity_30",
+      "budget_cr": 50.0,
+      "equity_mode": "equity_30",
+      "min_underserved_impact_share": 0.3,
+      "label": "30% underserved impact",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P008",
+        "P004"
+      ],
+      "total_cost": 46.0,
+      "unused_budget": 4.0,
+      "total_impact": 35842.64,
+      "underserved_expected_impact": 16233.3,
+      "underserved_impact_share": 0.4529,
+      "underserved_ids_selected": [
+        "P008",
+        "P004"
+      ],
+      "category_counts": {
+        "water": 2,
+        "roads": 1
+      },
+      "category_spend": {
+        "water": 36.0,
+        "roads": 10.0
+      },
+      "category_mix": "roads: 1 projects, ₹10 Cr; water: 2 projects, ₹36 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [
+          "P004",
+          "P008"
+        ],
+        "removed": [
+          "P006",
+          "P011"
+        ],
+        "impact_delta": -5098.89,
+        "impact_sacrificed_pct": 12.45,
+        "underserved_impact_delta": 16233.3,
+        "underserved_impact_share_baseline": 0.0,
+        "underserved_impact_share_selected": 0.4529,
+        "budget_used_baseline": 50.0,
+        "budget_used_selected": 46.0,
+        "unused_budget_selected": 4.0,
+        "category_counts_baseline": {
+          "water": 2,
+          "healthcare": 1
+        },
+        "category_counts_selected": {
+          "water": 2,
+          "roads": 1
+        }
+      }
+    },
+    {
+      "id": "50_equity_40",
+      "budget_cr": 50.0,
+      "equity_mode": "equity_40",
+      "min_underserved_impact_share": 0.4,
+      "label": "40% underserved impact",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P008",
+        "P004"
+      ],
+      "total_cost": 46.0,
+      "unused_budget": 4.0,
+      "total_impact": 35842.64,
+      "underserved_expected_impact": 16233.3,
+      "underserved_impact_share": 0.4529,
+      "underserved_ids_selected": [
+        "P008",
+        "P004"
+      ],
+      "category_counts": {
+        "water": 2,
+        "roads": 1
+      },
+      "category_spend": {
+        "water": 36.0,
+        "roads": 10.0
+      },
+      "category_mix": "roads: 1 projects, ₹10 Cr; water: 2 projects, ₹36 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [
+          "P004",
+          "P008"
+        ],
+        "removed": [
+          "P006",
+          "P011"
+        ],
+        "impact_delta": -5098.89,
+        "impact_sacrificed_pct": 12.45,
+        "underserved_impact_delta": 16233.3,
+        "underserved_impact_share_baseline": 0.0,
+        "underserved_impact_share_selected": 0.4529,
+        "budget_used_baseline": 50.0,
+        "budget_used_selected": 46.0,
+        "unused_budget_selected": 4.0,
+        "category_counts_baseline": {
+          "water": 2,
+          "healthcare": 1
+        },
+        "category_counts_selected": {
+          "water": 2,
+          "roads": 1
+        }
+      }
+    },
+    {
+      "id": "60_maximum_impact",
+      "budget_cr": 60.0,
+      "equity_mode": "maximum_impact",
+      "min_underserved_impact_share": 0.0,
+      "label": "Maximum impact / no equity constraint",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P011",
+        "P001"
+      ],
+      "total_cost": 60.0,
+      "unused_budget": 0.0,
+      "total_impact": 50735.12,
+      "underserved_expected_impact": 0,
+      "underserved_impact_share": 0.0,
+      "underserved_ids_selected": [],
+      "category_counts": {
+        "water": 3
+      },
+      "category_spend": {
+        "water": 60.0
+      },
+      "category_mix": "water: 3 projects, ₹60 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [],
+        "removed": [],
+        "impact_delta": 0.0,
+        "impact_sacrificed_pct": 0.0,
+        "underserved_impact_delta": 0,
+        "underserved_impact_share_baseline": 0.0,
+        "underserved_impact_share_selected": 0.0,
+        "budget_used_baseline": 60.0,
+        "budget_used_selected": 60.0,
+        "unused_budget_selected": 0.0,
+        "category_counts_baseline": {
+          "water": 3
+        },
+        "category_counts_selected": {
+          "water": 3
+        }
+      }
+    },
+    {
+      "id": "60_equity_25",
+      "budget_cr": 60.0,
+      "equity_mode": "equity_25",
+      "min_underserved_impact_share": 0.25,
+      "label": "25% underserved impact",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P008",
+        "P003",
+        "P004"
+      ],
+      "total_cost": 58.0,
+      "unused_budget": 2.0,
+      "total_impact": 45078.33,
+      "underserved_expected_impact": 16233.3,
+      "underserved_impact_share": 0.3601,
+      "underserved_ids_selected": [
+        "P008",
+        "P004"
+      ],
+      "category_counts": {
+        "water": 2,
+        "healthcare": 1,
+        "roads": 1
+      },
+      "category_spend": {
+        "water": 36.0,
+        "healthcare": 12.0,
+        "roads": 10.0
+      },
+      "category_mix": "healthcare: 1 projects, ₹12 Cr; roads: 1 projects, ₹10 Cr; water: 2 projects, ₹36 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [
+          "P003",
+          "P004",
+          "P008"
+        ],
+        "removed": [
+          "P001",
+          "P011"
+        ],
+        "impact_delta": -5656.79,
+        "impact_sacrificed_pct": 11.15,
+        "underserved_impact_delta": 16233.3,
+        "underserved_impact_share_baseline": 0.0,
+        "underserved_impact_share_selected": 0.3601,
+        "budget_used_baseline": 60.0,
+        "budget_used_selected": 58.0,
+        "unused_budget_selected": 2.0,
+        "category_counts_baseline": {
+          "water": 3
+        },
+        "category_counts_selected": {
+          "water": 2,
+          "healthcare": 1,
+          "roads": 1
+        }
+      }
+    },
+    {
+      "id": "60_equity_30",
+      "budget_cr": 60.0,
+      "equity_mode": "equity_30",
+      "min_underserved_impact_share": 0.3,
+      "label": "30% underserved impact",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P008",
+        "P003",
+        "P004"
+      ],
+      "total_cost": 58.0,
+      "unused_budget": 2.0,
+      "total_impact": 45078.33,
+      "underserved_expected_impact": 16233.3,
+      "underserved_impact_share": 0.3601,
+      "underserved_ids_selected": [
+        "P008",
+        "P004"
+      ],
+      "category_counts": {
+        "water": 2,
+        "healthcare": 1,
+        "roads": 1
+      },
+      "category_spend": {
+        "water": 36.0,
+        "healthcare": 12.0,
+        "roads": 10.0
+      },
+      "category_mix": "healthcare: 1 projects, ₹12 Cr; roads: 1 projects, ₹10 Cr; water: 2 projects, ₹36 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [
+          "P003",
+          "P004",
+          "P008"
+        ],
+        "removed": [
+          "P001",
+          "P011"
+        ],
+        "impact_delta": -5656.79,
+        "impact_sacrificed_pct": 11.15,
+        "underserved_impact_delta": 16233.3,
+        "underserved_impact_share_baseline": 0.0,
+        "underserved_impact_share_selected": 0.3601,
+        "budget_used_baseline": 60.0,
+        "budget_used_selected": 58.0,
+        "unused_budget_selected": 2.0,
+        "category_counts_baseline": {
+          "water": 3
+        },
+        "category_counts_selected": {
+          "water": 2,
+          "healthcare": 1,
+          "roads": 1
+        }
+      }
+    },
+    {
+      "id": "60_equity_40",
+      "budget_cr": 60.0,
+      "equity_mode": "equity_40",
+      "min_underserved_impact_share": 0.4,
+      "label": "40% underserved impact",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P008",
+        "P004",
+        "P009"
+      ],
+      "total_cost": 55.0,
+      "unused_budget": 5.0,
+      "total_impact": 40097.8,
+      "underserved_expected_impact": 20488.46,
+      "underserved_impact_share": 0.511,
+      "underserved_ids_selected": [
+        "P008",
+        "P004",
+        "P009"
+      ],
+      "category_counts": {
+        "water": 2,
+        "roads": 1,
+        "healthcare": 1
+      },
+      "category_spend": {
+        "water": 36.0,
+        "roads": 10.0,
+        "healthcare": 9.0
+      },
+      "category_mix": "healthcare: 1 projects, ₹9 Cr; roads: 1 projects, ₹10 Cr; water: 2 projects, ₹36 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [
+          "P004",
+          "P008",
+          "P009"
+        ],
+        "removed": [
+          "P001",
+          "P011"
+        ],
+        "impact_delta": -10637.32,
+        "impact_sacrificed_pct": 20.97,
+        "underserved_impact_delta": 20488.46,
+        "underserved_impact_share_baseline": 0.0,
+        "underserved_impact_share_selected": 0.511,
+        "budget_used_baseline": 60.0,
+        "budget_used_selected": 55.0,
+        "unused_budget_selected": 5.0,
+        "category_counts_baseline": {
+          "water": 3
+        },
+        "category_counts_selected": {
+          "water": 2,
+          "roads": 1,
+          "healthcare": 1
+        }
+      }
+    },
+    {
+      "id": "100_maximum_impact",
+      "budget_cr": 100.0,
+      "equity_mode": "maximum_impact",
+      "min_underserved_impact_share": 0.0,
+      "label": "Maximum impact / no equity constraint",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P011",
+        "P001",
+        "P008",
+        "P003",
+        "P012"
+      ],
+      "total_cost": 97.0,
+      "unused_budget": 3.0,
+      "total_impact": 78842.95,
+      "underserved_expected_impact": 10129.14,
+      "underserved_impact_share": 0.1285,
+      "underserved_ids_selected": [
+        "P008"
+      ],
+      "category_counts": {
+        "water": 4,
+        "healthcare": 2
+      },
+      "category_spend": {
+        "water": 74.0,
+        "healthcare": 23.0
+      },
+      "category_mix": "healthcare: 2 projects, ₹23 Cr; water: 4 projects, ₹74 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [],
+        "removed": [],
+        "impact_delta": 0.0,
+        "impact_sacrificed_pct": 0.0,
+        "underserved_impact_delta": 0.0,
+        "underserved_impact_share_baseline": 0.1285,
+        "underserved_impact_share_selected": 0.1285,
+        "budget_used_baseline": 97.0,
+        "budget_used_selected": 97.0,
+        "unused_budget_selected": 3.0,
+        "category_counts_baseline": {
+          "water": 4,
+          "healthcare": 2
+        },
+        "category_counts_selected": {
+          "water": 4,
+          "healthcare": 2
+        }
+      }
+    },
+    {
+      "id": "100_equity_25",
+      "budget_cr": 100.0,
+      "equity_mode": "equity_25",
+      "min_underserved_impact_share": 0.25,
+      "label": "25% underserved impact",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P011",
+        "P008",
+        "P003",
+        "P012",
+        "P004",
+        "P009"
+      ],
+      "total_cost": 98.0,
+      "unused_budget": 2.0,
+      "total_impact": 75545.16,
+      "underserved_expected_impact": 20488.46,
+      "underserved_impact_share": 0.2712,
+      "underserved_ids_selected": [
+        "P008",
+        "P004",
+        "P009"
+      ],
+      "category_counts": {
+        "water": 3,
+        "healthcare": 3,
+        "roads": 1
+      },
+      "category_spend": {
+        "water": 56.0,
+        "healthcare": 32.0,
+        "roads": 10.0
+      },
+      "category_mix": "healthcare: 3 projects, ₹32 Cr; roads: 1 projects, ₹10 Cr; water: 3 projects, ₹56 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [
+          "P004",
+          "P009"
+        ],
+        "removed": [
+          "P001"
+        ],
+        "impact_delta": -3297.79,
+        "impact_sacrificed_pct": 4.18,
+        "underserved_impact_delta": 10359.32,
+        "underserved_impact_share_baseline": 0.1285,
+        "underserved_impact_share_selected": 0.2712,
+        "budget_used_baseline": 97.0,
+        "budget_used_selected": 98.0,
+        "unused_budget_selected": 2.0,
+        "category_counts_baseline": {
+          "water": 4,
+          "healthcare": 2
+        },
+        "category_counts_selected": {
+          "water": 3,
+          "healthcare": 3,
+          "roads": 1
+        }
+      }
+    },
+    {
+      "id": "100_equity_30",
+      "budget_cr": 100.0,
+      "equity_mode": "equity_30",
+      "min_underserved_impact_share": 0.3,
+      "label": "30% underserved impact",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P005",
+        "P011",
+        "P008",
+        "P004",
+        "P010",
+        "P009",
+        "P006"
+      ],
+      "total_cost": 98.0,
+      "unused_budget": 2.0,
+      "total_impact": 67357.99,
+      "underserved_expected_impact": 20488.46,
+      "underserved_impact_share": 0.3042,
+      "underserved_ids_selected": [
+        "P008",
+        "P004",
+        "P009"
+      ],
+      "category_counts": {
+        "water": 3,
+        "roads": 2,
+        "healthcare": 2
+      },
+      "category_spend": {
+        "water": 56.0,
+        "roads": 25.0,
+        "healthcare": 17.0
+      },
+      "category_mix": "healthcare: 2 projects, ₹17 Cr; roads: 2 projects, ₹25 Cr; water: 3 projects, ₹56 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [
+          "P004",
+          "P006",
+          "P009",
+          "P010"
+        ],
+        "removed": [
+          "P001",
+          "P003",
+          "P012"
+        ],
+        "impact_delta": -11484.96,
+        "impact_sacrificed_pct": 14.57,
+        "underserved_impact_delta": 10359.32,
+        "underserved_impact_share_baseline": 0.1285,
+        "underserved_impact_share_selected": 0.3042,
+        "budget_used_baseline": 97.0,
+        "budget_used_selected": 98.0,
+        "unused_budget_selected": 2.0,
+        "category_counts_baseline": {
+          "water": 4,
+          "healthcare": 2
+        },
+        "category_counts_selected": {
+          "water": 3,
+          "roads": 2,
+          "healthcare": 2
+        }
+      }
+    },
+    {
+      "id": "100_equity_40",
+      "budget_cr": 100.0,
+      "equity_mode": "equity_40",
+      "min_underserved_impact_share": 0.4,
+      "label": "40% underserved impact",
+      "feasible": true,
+      "selected": [
+        {
+          "id": "P008",
+          "name": "Rural Drinking Water Pipeline",
+          "category": "water",
+          "location": "Rural Block C",
+          "cost_cr": 14.0,
+          "equity": 84.7,
+          "need_score": 80.39,
+          "expected_impact": 10129.14,
+          "estimated_beneficiaries": 18000,
+          "underserved": true
+        },
+        {
+          "id": "P003",
+          "name": "Rural PHC Expansion",
+          "category": "healthcare",
+          "location": "Rural Block A",
+          "cost_cr": 12.0,
+          "equity": 80.2,
+          "need_score": 72.38,
+          "expected_impact": 9235.69,
+          "estimated_beneficiaries": 22000,
+          "underserved": false
+        },
+        {
+          "id": "P012",
+          "name": "District PHC Staffing & Capacity Upgrade",
+          "category": "healthcare",
+          "location": "District Periphery",
+          "cost_cr": 11.0,
+          "equity": 65.3,
+          "need_score": 62.45,
+          "expected_impact": 8743.0,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P002",
+          "name": "Urban Road Expansion",
+          "category": "roads",
+          "location": "Central Zone",
+          "cost_cr": 25.0,
+          "equity": 23.9,
+          "need_score": 38.11,
+          "expected_impact": 6707.36,
+          "estimated_beneficiaries": 55000,
+          "underserved": false
+        },
+        {
+          "id": "P004",
+          "name": "Village Road Connectivity",
+          "category": "roads",
+          "location": "Village Cluster B",
+          "cost_cr": 10.0,
+          "equity": 83.6,
+          "need_score": 84.78,
+          "expected_impact": 6104.16,
+          "estimated_beneficiaries": 12000,
+          "underserved": true
+        },
+        {
+          "id": "P010",
+          "name": "Main Road Resurfacing",
+          "category": "roads",
+          "location": "South Zone",
+          "cost_cr": 15.0,
+          "equity": 33.0,
+          "need_score": 52.0,
+          "expected_impact": 5928.0,
+          "estimated_beneficiaries": 38000,
+          "underserved": false
+        },
+        {
+          "id": "P009",
+          "name": "Community Health Sub-Centre",
+          "category": "healthcare",
+          "location": "Village Cluster D",
+          "cost_cr": 9.0,
+          "equity": 87.6,
+          "need_score": 81.83,
+          "expected_impact": 4255.16,
+          "estimated_beneficiaries": 8000,
+          "underserved": true
+        }
+      ],
+      "unselected": [
+        {
+          "id": "P005",
+          "name": "Municipal Water Storage Expansion",
+          "category": "water",
+          "location": "North Zone",
+          "cost_cr": 22.0,
+          "equity": 38.1,
+          "need_score": 56.74,
+          "expected_impact": 19609.34,
+          "estimated_beneficiaries": 72000,
+          "underserved": false
+        },
+        {
+          "id": "P011",
+          "name": "Water Treatment Plant Upgrade",
+          "category": "water",
+          "location": "East Zone",
+          "cost_cr": 20.0,
+          "equity": 41.1,
+          "need_score": 57.92,
+          "expected_impact": 17468.67,
+          "estimated_beneficiaries": 58000,
+          "underserved": false
+        },
+        {
+          "id": "P001",
+          "name": "Ward 17 Water Distribution Upgrade",
+          "category": "water",
+          "location": "Ward 17",
+          "cost_cr": 18.0,
+          "equity": 58.2,
+          "need_score": 78.67,
+          "expected_impact": 13657.11,
+          "estimated_beneficiaries": 28000,
+          "underserved": false
+        },
+        {
+          "id": "P007",
+          "name": "Urban Flyover Improvement",
+          "category": "roads",
+          "location": "Commercial District",
+          "cost_cr": 30.0,
+          "equity": 20.8,
+          "need_score": 41.83,
+          "expected_impact": 4919.21,
+          "estimated_beneficiaries": 42000,
+          "underserved": false
+        },
+        {
+          "id": "P006",
+          "name": "Primary Health Centre Renovation",
+          "category": "healthcare",
+          "location": "Ward 9",
+          "cost_cr": 8.0,
+          "equity": 40.9,
+          "need_score": 53.66,
+          "expected_impact": 3863.52,
+          "estimated_beneficiaries": 18000,
+          "underserved": false
+        }
+      ],
+      "selected_ids": [
+        "P008",
+        "P003",
+        "P012",
+        "P002",
+        "P004",
+        "P010",
+        "P009"
+      ],
+      "total_cost": 96.0,
+      "unused_budget": 4.0,
+      "total_impact": 51102.51,
+      "underserved_expected_impact": 20488.46,
+      "underserved_impact_share": 0.4009,
+      "underserved_ids_selected": [
+        "P008",
+        "P004",
+        "P009"
+      ],
+      "category_counts": {
+        "water": 1,
+        "healthcare": 3,
+        "roads": 3
+      },
+      "category_spend": {
+        "water": 14.0,
+        "healthcare": 32.0,
+        "roads": 50.0
+      },
+      "category_mix": "healthcare: 3 projects, ₹32 Cr; roads: 3 projects, ₹50 Cr; water: 1 projects, ₹14 Cr",
+      "high_need_total": 0,
+      "high_need_selected_ids": [],
+      "high_need_project_coverage_pct": null,
+      "infeasible_reasons": [],
+      "comparison_to_baseline": {
+        "added": [
+          "P002",
+          "P004",
+          "P009",
+          "P010"
+        ],
+        "removed": [
+          "P001",
+          "P005",
+          "P011"
+        ],
+        "impact_delta": -27740.44,
+        "impact_sacrificed_pct": 35.18,
+        "underserved_impact_delta": 10359.32,
+        "underserved_impact_share_baseline": 0.1285,
+        "underserved_impact_share_selected": 0.4009,
+        "budget_used_baseline": 97.0,
+        "budget_used_selected": 96.0,
+        "unused_budget_selected": 4.0,
+        "category_counts_baseline": {
+          "water": 4,
+          "healthcare": 2
+        },
+        "category_counts_selected": {
+          "water": 1,
+          "healthcare": 3,
+          "roads": 3
+        }
+      }
+    }
+  ]
+}

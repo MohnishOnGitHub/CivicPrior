@@ -1,0 +1,132 @@
+[
+  {
+    "id": "INV001",
+    "geo_id": "geo_ward_17",
+    "category": "water",
+    "project_name": "Ward 17 distribution rehab (unfunded plan)",
+    "amount_cr": 18,
+    "status": "planned",
+    "start_date": "2026-09-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV002",
+    "geo_id": "geo_central_zone",
+    "category": "roads",
+    "project_name": "Central corridor widening",
+    "amount_cr": 25,
+    "status": "approved",
+    "start_date": "2026-06-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV003",
+    "geo_id": "geo_north_zone",
+    "category": "water",
+    "project_name": "North Zone tank patch repair",
+    "amount_cr": 8,
+    "status": "in_progress",
+    "start_date": "2026-01-15",
+    "synthetic": true
+  },
+  {
+    "id": "INV004",
+    "geo_id": "geo_south_zone",
+    "category": "roads",
+    "project_name": "South Zone mill-and-fill 2024",
+    "amount_cr": 12,
+    "status": "completed",
+    "start_date": "2024-11-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV005",
+    "geo_id": "geo_east_zone",
+    "category": "water",
+    "project_name": "East Zone chlorination upgrade",
+    "amount_cr": 15,
+    "status": "approved",
+    "start_date": "2026-07-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV006",
+    "geo_id": "geo_ward_9",
+    "category": "healthcare",
+    "project_name": "Ward 9 PHC roof repair",
+    "amount_cr": 5,
+    "status": "in_progress",
+    "start_date": "2026-02-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV007",
+    "geo_id": "geo_rural_block_a",
+    "category": "healthcare",
+    "project_name": "Block A PHC expansion (unfunded)",
+    "amount_cr": 12,
+    "status": "planned",
+    "start_date": "2027-04-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV008",
+    "geo_id": "geo_commercial_district",
+    "category": "roads",
+    "project_name": "Commercial District flyover package",
+    "amount_cr": 30,
+    "status": "approved",
+    "start_date": "2026-08-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV009",
+    "geo_id": "geo_district_periphery",
+    "category": "healthcare",
+    "project_name": "Periphery PHC staffing contract",
+    "amount_cr": 11,
+    "status": "approved",
+    "start_date": "2026-05-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV010",
+    "geo_id": "geo_village_cluster_b",
+    "category": "roads",
+    "project_name": "Cluster B track improvement study",
+    "amount_cr": 2,
+    "status": "planned",
+    "start_date": "2026-10-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV011",
+    "geo_id": "geo_south_zone",
+    "category": "water",
+    "project_name": "South Zone leak detection",
+    "amount_cr": 6,
+    "status": "approved",
+    "start_date": "2026-04-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV012",
+    "geo_id": "geo_central_zone",
+    "category": "water",
+    "project_name": "Central Zone network replacement 2023",
+    "amount_cr": 20,
+    "status": "completed",
+    "start_date": "2023-06-01",
+    "synthetic": true
+  },
+  {
+    "id": "INV013",
+    "geo_id": "geo_east_zone",
+    "category": "roads",
+    "project_name": "East Zone footpath package",
+    "amount_cr": 4,
+    "status": "in_progress",
+    "start_date": "2025-12-01",
+    "synthetic": true
+  }
+]

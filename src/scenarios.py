@@ -20,7 +20,6 @@ if str(SRC_DIR) not in sys.path:
 
 from optimizer import (
     HIGH_NEED_SCORE_MIN,
-    UNDERSERVED_EQUITY_MIN,
     OptimizerError,
     Scenario,
     binding_constraints,
@@ -92,7 +91,7 @@ def print_comparison(results: list[dict], baseline: dict) -> None:
     print("CivicPrior — Scenario Comparison")
     print(f"Source: {DATA_PATH.relative_to(REPO_ROOT)}")
     print(f"Budget: ₹{budget:.0f} Cr for every scenario")
-    print(f"Underserved rule: equity ≥ {UNDERSERVED_EQUITY_MIN}")
+    print(f"Underserved rule: equity ≥ {baseline['scenario'].underserved_equity_min:.2f}")
     print(f"High-need rule: need_score ≥ {HIGH_NEED_SCORE_MIN} (reporting only, not a constraint)")
     print("Underserved spend share denominator: available budget")
     print("Underserved impact share denominator: selected portfolio expected_impact")

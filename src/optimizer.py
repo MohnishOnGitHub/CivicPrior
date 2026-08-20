@@ -25,7 +25,7 @@ SRC_DIR = Path(__file__).resolve().parent
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-from scoring import DATA_PATH, DataError, REPO_ROOT, load_projects, score_projects
+from scoring import DATA_PATH, DataError, REPO_ROOT, SCORE_MAX, SCORE_MIN, load_projects, score_projects
 
 
 DEFAULT_BUDGET_CR = 50.0
@@ -47,6 +47,7 @@ class Scenario:
     min_underserved_impact_share: float = 0.0
     min_category_projects: dict[str, int] = field(default_factory=dict)
     name: str = "unconstrained"
+    underserved_equity_min: float = UNDERSERVED_EQUITY_MIN
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any], name: str = "") -> "Scenario":
@@ -79,6 +80,9 @@ class Scenario:
             ),
             min_category_projects=categories,
             name=name or str(raw.get("name") or "custom"),
+            underserved_equity_min=_validate_equity_min(
+                raw.get("underserved_equity_min", UNDERSERVED_EQUITY_MIN)
+            ),
         )
 
     def required_underserved_spend(self) -> float:
@@ -198,26 +202,51 @@ def scenario_from_args(args: argparse.Namespace) -> Scenario:
     )
 
 
-def is_underserved(project: dict[str, Any]) -> bool:
-    return project["equity"] >= UNDERSERVED_EQUITY_MIN
+def _validate_equity_min(value: Any) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise OptimizerError(f"underserved_equity_min must be a number, got {value!r}")
+    equity_min = float(value)
+    if equity_min != equity_min:
+        raise OptimizerError("underserved_equity_min cannot be NaN")
+    if not SCORE_MIN <= equity_min <= SCORE_MAX:
+        raise OptimizerError(
+            f"underserved_equity_min must be between {SCORE_MIN} and {SCORE_MAX}, "
+            f"got {equity_min}"
+        )
+    return equity_min
+
+
+def is_underserved(
+    project: dict[str, Any],
+    equity_min: float = UNDERSERVED_EQUITY_MIN,
+) -> bool:
+    return project["equity"] >= equity_min
 
 
 def is_high_need(project: dict[str, Any]) -> bool:
     return project["need_score"] >= HIGH_NEED_SCORE_MIN
 
 
-def underserved_spend(projects: list[dict[str, Any]] | tuple[dict[str, Any], ...]) -> float:
+def underserved_spend(
+    projects: list[dict[str, Any]] | tuple[dict[str, Any], ...],
+    equity_min: float = UNDERSERVED_EQUITY_MIN,
+) -> float:
     return round(
-        sum(project["cost_cr"] for project in projects if is_underserved(project)),
+        sum(project["cost_cr"] for project in projects if is_underserved(project, equity_min)),
         2,
     )
 
 
 def underserved_expected_impact(
     projects: list[dict[str, Any]] | tuple[dict[str, Any], ...],
+    equity_min: float = UNDERSERVED_EQUITY_MIN,
 ) -> float:
     return round(
-        sum(project["expected_impact"] for project in projects if is_underserved(project)),
+        sum(
+            project["expected_impact"]
+            for project in projects
+            if is_underserved(project, equity_min)
+        ),
         2,
     )
 
@@ -233,7 +262,7 @@ def _meets_underserved_spend_constraint(
     combo: tuple[dict[str, Any], ...],
     scenario: Scenario,
 ) -> bool:
-    return underserved_spend(combo) >= scenario.required_underserved_spend()
+    return underserved_spend(combo, scenario.underserved_equity_min) >= scenario.required_underserved_spend()
 
 
 def _meets_underserved_impact_constraint(
@@ -246,7 +275,7 @@ def _meets_underserved_impact_constraint(
     total = round(sum(project["expected_impact"] for project in combo), 2)
     if total <= 0:
         return False
-    share = underserved_expected_impact(combo) / total
+    share = underserved_expected_impact(combo, scenario.underserved_equity_min) / total
     return share + 1e-12 >= required
 
 
@@ -301,7 +330,7 @@ def _infeasible_reasons(
             reasons.append(
                 "Could not satisfy min_underserved_budget_share="
                 f"{scenario.min_underserved_budget_share:.0%}: need ≥ ₹{required_spend:.2f} Cr "
-                f"of selected cost on projects with equity ≥ {UNDERSERVED_EQUITY_MIN} "
+                f"of selected cost on projects with equity ≥ {scenario.underserved_equity_min:.2f} "
                 f"(denominator is available budget ₹{scenario.budget_cr:.0f} Cr, not selected spend)."
             )
     if scenario.min_underserved_impact_share > 0:
@@ -311,7 +340,7 @@ def _infeasible_reasons(
                 "Could not satisfy min_underserved_impact_share="
                 f"{scenario.min_underserved_impact_share:.0%}: at least that share of "
                 "selected expected_impact must come from projects with "
-                f"equity ≥ {UNDERSERVED_EQUITY_MIN}."
+                f"equity ≥ {scenario.underserved_equity_min:.2f}."
             )
     if scenario.min_category_projects:
         individually_ok = individually_ok and saw_category
@@ -370,11 +399,12 @@ def _metrics(
     projects: list[dict[str, Any]],
     budget: float,
     catalog: list[dict[str, Any]] | None = None,
+    equity_min: float = UNDERSERVED_EQUITY_MIN,
 ) -> dict[str, Any]:
     total_cost = round(sum(project["cost_cr"] for project in projects), 2)
     total_impact = round(sum(project["expected_impact"] for project in projects), 2)
-    underserved_cost = underserved_spend(projects)
-    underserved_impact = underserved_expected_impact(projects)
+    underserved_cost = underserved_spend(projects, equity_min)
+    underserved_impact = underserved_expected_impact(projects, equity_min)
     spend_share = round(underserved_cost / budget, 4) if budget else 0.0
     source = catalog if catalog is not None else projects
     return {
@@ -390,8 +420,9 @@ def _metrics(
         "underserved_expected_impact": underserved_impact,
         "underserved_impact_share": impact_share(underserved_impact, total_impact),
         "underserved_ids": [
-            project["id"] for project in projects if is_underserved(project)
+            project["id"] for project in projects if is_underserved(project, equity_min)
         ],
+        "underserved_equity_min": equity_min,
         "category_counts": category_counts(projects),
         "category_spend": category_spend(projects),
         "category_mix": format_category_mix(projects),
@@ -417,6 +448,7 @@ def select_portfolio(
         scenario.min_underserved_impact_share,
         "min_underserved_impact_share",
     )
+    scenario.underserved_equity_min = _validate_equity_min(scenario.underserved_equity_min)
 
     if not projects:
         raise OptimizerError("No scored projects available to optimize")
@@ -463,7 +495,12 @@ def select_portfolio(
     if best is None:
         return {
             **base,
-            **_metrics([], scenario.budget_cr, catalog=ranked),
+            **_metrics(
+                [],
+                scenario.budget_cr,
+                catalog=ranked,
+                equity_min=scenario.underserved_equity_min,
+            ),
             "infeasible_reasons": _infeasible_reasons(
                 scenario,
                 saw_spend,
@@ -481,7 +518,12 @@ def select_portfolio(
     unselected = [project for project in ranked if project["id"] not in selected_ids]
     result = {
         **base,
-        **_metrics(selected, scenario.budget_cr, catalog=ranked),
+        **_metrics(
+            selected,
+            scenario.budget_cr,
+            catalog=ranked,
+            equity_min=scenario.underserved_equity_min,
+        ),
         "feasible": True,
         "unselected": unselected,
     }
@@ -614,7 +656,11 @@ def format_category_mix(projects: list[dict[str, Any]] | tuple[dict[str, Any], .
     )
 
 
-def format_project_table(projects: list[dict[str, Any]]) -> str:
+def format_project_table(
+    projects: list[dict[str, Any]],
+    *,
+    equity_min: float = UNDERSERVED_EQUITY_MIN,
+) -> str:
     if not projects:
         return "(none)"
     rows = [
@@ -625,7 +671,7 @@ def format_project_table(projects: list[dict[str, Any]]) -> str:
             f"{project['need_score']:.2f}",
             f"{project['expected_impact']:.2f}",
             f"{project['equity']:.0f}",
-            "yes" if is_underserved(project) else "no",
+            "yes" if is_underserved(project, equity_min) else "no",
             "yes" if is_high_need(project) else "no",
             project["category"],
             f"₹{project['cost_cr']:.0f} Cr",
@@ -659,7 +705,7 @@ def print_report(result: dict[str, Any], *, show_catalog: bool = True) -> None:
         "expected_impact = estimated_beneficiaries × (need_score/100) "
         "× (expected_improvement_pct/100)"
     )
-    print(f"Underserved rule: equity ≥ {UNDERSERVED_EQUITY_MIN}")
+    print(f"Underserved rule: equity ≥ {scenario.underserved_equity_min:.2f}")
     print(f"High-need rule: need_score ≥ {HIGH_NEED_SCORE_MIN} (reporting only)")
     print(f"min_underserved_budget_share: {scenario.min_underserved_budget_share:.0%}")
     print(f"min_underserved_impact_share: {scenario.min_underserved_impact_share:.0%}")
@@ -675,7 +721,7 @@ def print_report(result: dict[str, Any], *, show_catalog: bool = True) -> None:
     print()
     if show_catalog:
         print("All projects by expected_impact")
-        print(format_project_table(result["all_projects"]))
+        print(format_project_table(result["all_projects"], equity_min=scenario.underserved_equity_min))
         print()
 
     print(f"Budget:                      ₹{result['budget']:.0f} Cr")
@@ -723,10 +769,10 @@ def print_report(result: dict[str, Any], *, show_catalog: bool = True) -> None:
     print(f"Category mix:                {result['category_mix']}")
     print()
     print("Selected portfolio")
-    print(format_project_table(result["selected"]))
+    print(format_project_table(result["selected"], equity_min=scenario.underserved_equity_min))
     print()
     print(f"Highest-impact unselected projects (top {UNSELECTED_PREVIEW})")
-    print(format_project_table(result["unselected"][:UNSELECTED_PREVIEW]))
+    print(format_project_table(result["unselected"][:UNSELECTED_PREVIEW], equity_min=scenario.underserved_equity_min))
 
 
 def main(argv: list[str] | None = None) -> int:
