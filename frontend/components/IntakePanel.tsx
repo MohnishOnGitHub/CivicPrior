@@ -5,10 +5,12 @@ import {
   CATEGORIES,
   GEO_CATALOG,
   LANGUAGES,
+  type ExtractionMode,
   type IntakeForm,
   type StructuredRequest,
 } from "@/lib/intakeSchema";
-import { emptyIntakeForm, extractStructuredRequest, INTAKE_PRESETS } from "@/lib/mockExtract";
+import { emptyIntakeForm, INTAKE_PRESETS } from "@/lib/mockExtract";
+import { requestIntakeExtraction } from "@/lib/intakeClient";
 
 function Field({
   label,
@@ -25,17 +27,42 @@ function Field({
   );
 }
 
+function modeLabel(mode: ExtractionMode | undefined): string {
+  return mode === "gemini" ? "Gemini" : "Mock fallback";
+}
+
 export default function IntakePanel() {
   const [form, setForm] = useState<IntakeForm>(emptyIntakeForm);
   const [result, setResult] = useState<StructuredRequest | null>(null);
+  const [extractionMode, setExtractionMode] = useState<ExtractionMode | null>(null);
+  const [fallbackReason, setFallbackReason] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  async function extract(nextForm: IntakeForm) {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await requestIntakeExtraction(nextForm);
+      setResult(response.record);
+      setExtractionMode(response.extraction_mode);
+      setFallbackReason(response.fallback_reason);
+    } catch (err) {
+      setResult(null);
+      setExtractionMode(null);
+      setFallbackReason(null);
+      setError(err instanceof Error ? err.message : "Intake API request failed.");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   function applyPreset(presetId: string) {
     const preset = INTAKE_PRESETS.find((item) => item.id === presetId);
     if (!preset) return;
-    setForm({ ...preset.form });
-    setError(null);
-    setResult(extractStructuredRequest(preset.form));
+    const nextForm = { ...preset.form };
+    setForm(nextForm);
+    void extract(nextForm);
   }
 
   function onSubmit(event: React.FormEvent) {
@@ -43,10 +70,10 @@ export default function IntakePanel() {
     if (!form.original_text.trim()) {
       setError("Enter a complaint before submitting.");
       setResult(null);
+      setExtractionMode(null);
       return;
     }
-    setError(null);
-    setResult(extractStructuredRequest(form));
+    void extract(form);
   }
 
   return (
@@ -63,8 +90,9 @@ export default function IntakePanel() {
       </div>
 
       <div className="callout mock-note">
-        Demo / mock extraction — Gemini integration pending. This screen does
-        not write to seed-citizen-requests.json.
+        Complaints are sent to a server route that calls Gemini. The API key
+        stays on the server. If Gemini is unavailable, the existing mock
+        extractor is used. Nothing is saved.
       </div>
 
       <div className="preset-row">
@@ -73,6 +101,7 @@ export default function IntakePanel() {
             key={preset.id}
             type="button"
             className="preset-btn"
+            disabled={loading}
             onClick={() => applyPreset(preset.id)}
           >
             {preset.label}
@@ -90,6 +119,7 @@ export default function IntakePanel() {
               setForm((current) => ({ ...current, original_text: event.target.value }))
             }
             placeholder="Describe the local infrastructure problem…"
+            disabled={loading}
           />
         </label>
         <div className="intake-grid">
@@ -97,6 +127,7 @@ export default function IntakePanel() {
             Language
             <select
               value={form.language}
+              disabled={loading}
               onChange={(event) =>
                 setForm((current) => ({
                   ...current,
@@ -115,6 +146,7 @@ export default function IntakePanel() {
             Locality
             <select
               value={form.geo_id}
+              disabled={loading}
               onChange={(event) =>
                 setForm((current) => ({ ...current, geo_id: event.target.value }))
               }
@@ -130,6 +162,7 @@ export default function IntakePanel() {
             Category hint (optional)
             <select
               value={form.category_hint}
+              disabled={loading}
               onChange={(event) =>
                 setForm((current) => ({
                   ...current,
@@ -147,28 +180,40 @@ export default function IntakePanel() {
           </label>
         </div>
         {error ? <p className="form-error">{error}</p> : null}
-        <button className="submit-btn" type="submit">
-          Submit complaint
+        {loading ? <p className="muted">Interpreting complaint…</p> : null}
+        <button className="submit-btn" type="submit" disabled={loading}>
+          {loading ? "Working…" : "Submit complaint"}
         </button>
       </form>
 
-      {result ? (
+      {result && extractionMode ? (
         <div className="section card interpretation">
           <h3>Structured interpretation</h3>
+          {extractionMode === "gemini" ? (
+            <div className="callout ok">Extraction mode: Gemini</div>
+          ) : (
+            <div className="callout mock-note">
+              Extraction mode: Mock fallback
+              {fallbackReason ? ` — ${fallbackReason}` : ""}
+            </div>
+          )}
           {result.review_needed ? (
             <div className="callout tradeoff">
-              Review needed — mock confidence {result.confidence.toFixed(2)} is
-              below 0.70. A live extractor should send this to a human reviewer.
+              Review needed — confidence {result.confidence.toFixed(2)} is
+              below 0.70. This record should be checked before it feeds demand
+              scoring.
             </div>
           ) : (
             <p className="muted">
               Confidence {result.confidence.toFixed(2)} — above the 0.70 review
-              threshold.
+              threshold. Source: {modeLabel(extractionMode)}.
             </p>
           )}
           <dl className="snapshot-list interpretation-list">
+            <Field label="Extraction mode">{modeLabel(extractionMode)}</Field>
             <Field label="Original text">{result.original_text}</Field>
             <Field label="Normalized English">{result.normalized_english}</Field>
+            <Field label="Language">{result.language}</Field>
             <Field label="Category">{result.category}</Field>
             <Field label="Subcategory">{result.subcategory}</Field>
             <Field label="Location">{result.canonical_location}</Field>
@@ -179,9 +224,6 @@ export default function IntakePanel() {
           </dl>
           <p className="muted">
             Demo record {result.id}. Not saved to the citizen-request seed file.
-            {result.matched_preset
-              ? ` Matched demo pattern: ${result.matched_preset}.`
-              : " No known demo pattern matched."}
           </p>
         </div>
       ) : null}

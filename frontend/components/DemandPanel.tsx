@@ -8,8 +8,8 @@ export default function DemandPanel({ data }: { data: DashboardPayload }) {
         <div>
           <h2>Demand intelligence</h2>
           <p>
-            Enriched demand clusters from the citizen-request pipeline. Map view
-            is not included in this MVP.
+            Enriched demand clusters from the citizen-request pipeline. Spatial
+            layout is in Geospatial view using demo coordinates only.
           </p>
         </div>
       </div>

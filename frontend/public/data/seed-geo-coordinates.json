@@ -1,0 +1,91 @@
+{
+  "synthetic": true,
+  "coordinate_system": "civicprior_demo_district_schematic_v1",
+  "disclaimer": "Invented demo coordinates for a fictional CivicPrior district schematic. These are not WGS 84 administrative geocodes and do not correspond to any real Ward 17, Rural Block A, or other official locality.",
+  "locations": [
+    {
+      "geo_id": "geo_central_zone",
+      "location_name": "Central Zone",
+      "latitude": 0.5,
+      "longitude": 0.52,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_commercial_district",
+      "location_name": "Commercial District",
+      "latitude": 0.48,
+      "longitude": 0.61,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_ward_9",
+      "location_name": "Ward 9",
+      "latitude": 0.44,
+      "longitude": 0.46,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_ward_17",
+      "location_name": "Ward 17",
+      "latitude": 0.56,
+      "longitude": 0.45,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_north_zone",
+      "location_name": "North Zone",
+      "latitude": 0.72,
+      "longitude": 0.52,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_south_zone",
+      "location_name": "South Zone",
+      "latitude": 0.3,
+      "longitude": 0.52,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_east_zone",
+      "location_name": "East Zone",
+      "latitude": 0.52,
+      "longitude": 0.74,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_district_periphery",
+      "location_name": "District Periphery",
+      "latitude": 0.54,
+      "longitude": 0.88,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_rural_block_a",
+      "location_name": "Rural Block A",
+      "latitude": 0.34,
+      "longitude": 0.24,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_village_cluster_b",
+      "location_name": "Village Cluster B",
+      "latitude": 0.2,
+      "longitude": 0.16,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_rural_block_c",
+      "location_name": "Rural Block C",
+      "latitude": 0.68,
+      "longitude": 0.22,
+      "synthetic": true
+    },
+    {
+      "geo_id": "geo_village_cluster_d",
+      "location_name": "Village Cluster D",
+      "latitude": 0.82,
+      "longitude": 0.14,
+      "synthetic": true
+    }
+  ]
+}

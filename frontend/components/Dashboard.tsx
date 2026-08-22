@@ -8,22 +8,38 @@ import OverviewPanel from "./OverviewPanel";
 import DemandPanel from "./DemandPanel";
 import SimulatorPanel from "./SimulatorPanel";
 import ComparePanel from "./ComparePanel";
+import GeoMapPanel from "./GeoMapPanel";
+import ImpactPanel from "./ImpactPanel";
 import IntakePanel from "./IntakePanel";
+import BricsPanel from "./BricsPanel";
+import DemoGuide from "./DemoGuide";
 
 const NAV: Array<{ id: ViewId; label: string; hero?: boolean }> = [
   { id: "intake", label: "Citizen intake" },
-  { id: "overview", label: "Overview" },
   { id: "demand", label: "Demand intelligence" },
+  { id: "geospatial", label: "Geospatial view" },
   { id: "simulator", label: "Policy simulator", hero: true },
   { id: "compare", label: "Scenario comparison" },
+  { id: "impact", label: "Impact tracking" },
+  { id: "brics", label: "BRICS / Digital Public Good" },
+  { id: "overview", label: "Overview" },
 ];
 
 export default function Dashboard() {
   const [data, setData] = useState<DashboardPayload | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [view, setView] = useState<ViewId>("simulator");
+  const [view, setView] = useState<ViewId>("intake");
   const [budget, setBudget] = useState(60);
   const [equityMode, setEquityMode] = useState("equity_30");
+  const [showDemoGuide, setShowDemoGuide] = useState(true);
+
+  function goDemoStep(next: ViewId) {
+    if (next === "simulator" || next === "compare" || next === "geospatial") {
+      setBudget(60);
+      setEquityMode("equity_30");
+    }
+    setView(next);
+  }
 
   useEffect(() => {
     loadDashboard()
@@ -72,19 +88,42 @@ export default function Dashboard() {
             </button>
           ))}
         </nav>
+        <button
+          type="button"
+          className="demo-toggle"
+          onClick={() => setShowDemoGuide((open) => !open)}
+        >
+          {showDemoGuide ? "Hide demo guide" : "Show demo guide"}
+        </button>
         <p className="sidebar-note">
           {data
             ? `Catalog: ${data.catalog.replace(/_/g, " ")}. Optimizer results are imported, not computed in the browser.`
-            : "Citizen intake uses a local mock extractor. Gemini is not called."}
+            : "Citizen intake calls a server route. Gemini stays server-side."}
         </p>
       </aside>
       <main className="main">
         <p className="data-note">
           Synthetic demonstration data · not official government statistics
         </p>
+        {showDemoGuide ? (
+          <DemoGuide
+            data={data}
+            view={view}
+            onGo={goDemoStep}
+            onClose={() => setShowDemoGuide(false)}
+          />
+        ) : null}
         {view === "intake" ? <IntakePanel /> : null}
-        {view !== "intake" && error ? <p className="error">{error}</p> : null}
-        {view !== "intake" && !data && !error ? (
+        {view === "impact" ? <ImpactPanel /> : null}
+        {view === "brics" ? <BricsPanel /> : null}
+        {view !== "intake" && view !== "impact" && view !== "brics" && error ? (
+          <p className="error">{error}</p>
+        ) : null}
+        {view !== "intake" &&
+        view !== "impact" &&
+        view !== "brics" &&
+        !data &&
+        !error ? (
           <p className="loading">Loading CivicPrior decision export…</p>
         ) : null}
         {data && view === "overview" ? <OverviewPanel data={data} /> : null}
@@ -96,6 +135,16 @@ export default function Dashboard() {
             equityMode={equityMode}
             scenario={selected}
             baseline={baseline}
+            onBudget={setBudget}
+            onEquityMode={setEquityMode}
+          />
+        ) : null}
+        {data && view === "geospatial" ? (
+          <GeoMapPanel
+            data={data}
+            budget={budget}
+            equityMode={equityMode}
+            scenario={selected}
             onBudget={setBudget}
             onEquityMode={setEquityMode}
           />

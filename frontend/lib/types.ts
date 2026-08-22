@@ -112,4 +112,12 @@ export type DashboardPayload = {
   scenarios: ScenarioResult[];
 };
 
-export type ViewId = "intake" | "overview" | "demand" | "simulator" | "compare";
+export type ViewId =
+  | "intake"
+  | "overview"
+  | "demand"
+  | "simulator"
+  | "geospatial"
+  | "impact"
+  | "compare"
+  | "brics";

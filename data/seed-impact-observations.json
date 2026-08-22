@@ -1,0 +1,71 @@
+{
+  "synthetic": true,
+  "disclaimer": "Synthetic post-completion observations for the CivicPrior demo. Predicted-vs-observed comparison is not a causal impact estimate.",
+  "projects": [
+    {
+      "project_id": "P001",
+      "name": "Ward 17 Water Distribution Upgrade",
+      "location": "Ward 17",
+      "category": "water",
+      "status": "completed_demo",
+      "causal_claim": false,
+      "metrics": [
+        {
+          "metric_name": "complaints_per_month",
+          "label": "Complaints / month",
+          "unit": "complaints/month",
+          "direction": "lower_is_better",
+          "baseline": 221,
+          "predicted_value": 70,
+          "observed_value": 47
+        },
+        {
+          "metric_name": "water_availability_hrs_per_day",
+          "label": "Water availability",
+          "unit": "hrs/day",
+          "direction": "higher_is_better",
+          "baseline": 3.1,
+          "predicted_value": 7.5,
+          "observed_value": 8.7
+        }
+      ]
+    },
+    {
+      "project_id": "P003",
+      "name": "Rural PHC Expansion",
+      "location": "Rural Block A",
+      "category": "healthcare",
+      "status": "completed_demo",
+      "causal_claim": false,
+      "metrics": [
+        {
+          "metric_name": "average_daily_opd_wait_minutes",
+          "label": "Average daily OPD wait time",
+          "unit": "minutes",
+          "direction": "lower_is_better",
+          "baseline": 132,
+          "predicted_value": 85,
+          "observed_value": 76
+        },
+        {
+          "metric_name": "patients_referred_outside_block_per_month",
+          "label": "Patients referred outside block / month",
+          "unit": "patients/month",
+          "direction": "lower_is_better",
+          "baseline": 420,
+          "predicted_value": 275,
+          "observed_value": 248
+        },
+        {
+          "metric_name": "average_daily_patients_served",
+          "label": "Average daily patients served",
+          "unit": "patients/day",
+          "direction": "higher_is_better",
+          "baseline": 118,
+          "predicted_value": 165,
+          "observed_value": 178
+        }
+      ]
+    }
+  ]
+}
